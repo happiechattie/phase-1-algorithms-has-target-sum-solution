@@ -1,5 +1,11 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seen = new Set();
+  for (num of array){
+    const difference = target - num;
+    if (seen.has(difference)) {return true;}
+    seen.add(num);
+  }
+  return false;
 }
 
 /* 
@@ -7,7 +13,10 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
+  iterate through array
+  create new set without current element
+  find difference between target and current element
+  .has(difference)
 */
 
 /*
